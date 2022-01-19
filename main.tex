@@ -1,0 +1,101 @@
+\documentclass[10pt]{beamer}
+\setbeamertemplate{bibliography item}{}
+\setbeamertemplate{caption}[numbered]
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+
+\usepackage[
+backend=biber,
+style=apa,
+]{biblatex}
+\addbibresource{main.bib}
+
+\usepackage[super]{nth}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+
+%------------------------------------------------------------
+% Title page configuration
+\title[Shrinkage and sparsity in BVAR models]
+{Combining shrinkage and sparsity in conjugate vector autoregressive models}
+
+\subtitle{Niko Hauzenberger, Florian Huber and Luca Onorante}
+
+\author[Philipp Page]
+{Philipp Page}
+
+\institute[]
+{
+WiSo Faculty,\\
+University of Cologne
+}
+
+\date[\nth{20} January 2022]
+{Seminar in Econometrics, \nth{20} January 2022}
+%------------------------------------------------------------
+
+%------------------------------------------------------------
+% Puts the table of contents at the beginning of each section 
+% and highlights the current section.
+\AtBeginSection[]
+{
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents[currentsection]
+\end{frame}
+}
+%------------------------------------------------------------
+
+%------------------------------------------------------------
+% Dedicated counter for the Appendix / backup slides
+\newcommand{\backupbegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}} 
+}
+%------------------------------------------------------------
+
+\begin{document}
+
+%------------------------------------------------------------
+% Title page
+\frame{\titlepage}
+%------------------------------------------------------------
+
+%------------------------------------------------------------
+% Table of contents
+\begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents
+\end{frame}
+%------------------------------------------------------------
+
+%------------------------------------------------------------
+% Content slides
+\include{slides}
+%------------------------------------------------------------
+
+%------------------------------------------------------------
+% References
+\begin{frame}[allowframebreaks]{References}
+    \nocite{hauzenberger_combining_2020}
+    \printbibliography
+\end{frame}
+%------------------------------------------------------------
+
+%------------------------------------------------------------
+% Appendix
+\backupbegin
+\include{appendix}
+\backupend
+%------------------------------------------------------------
+\end{document}
