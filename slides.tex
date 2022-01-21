@@ -133,19 +133,19 @@
     Thanks to conjugacy the posterior distributions have a closed form solution!
 \end{frame}
 
-\begin{frame}{The problem of dense models}
+\begin{frame}{The problems of dense models}
     The one-step-ahead predictive density follows a multivariate $t$-distribution with variance:
     
     \begin{align}
         Var(y_{T + 1}|Y,X) = \frac{1}{s_1 - 2} \underbrace{\left(1 + \sum_{i = 1}^{n} \sum_{j = 1}^{n} (x_{iT+1} x_{jT+1} \nu_{ij}) \right)}_{\text{Parameter uncertainty}} S_1
     \end{align}
     
-    where $s_1$ and $S_1$ are the mean and variance of the Gaussian shocks $\epsilon_{T + 1}$ and $\nu_{ij}$ the $(i,j)$th element in $\Bar{V} = (\Bar{X}'\Bar{X})^{-1}$. Note that the parameter estimates depend on $\Bar{V}$ as $\Bar{A} = \Bar{V} (X'Y + V_0(\delta)^{-1} A_0)$.\\~\\
+    where $s_1$ and $S_1$ are the mean and variance estimates of the Gaussian shocks $\epsilon_{T + 1}$ and $\nu_{ij}$ the $(i,j)$th element in $\Bar{V} = (\Bar{X}'\Bar{X})^{-1}$. Note that the posterior variance for $\alpha$ depends on $\Bar{V}$ and is given by $Var(\alpha | \Sigma,Y,X) = \Sigma \bigotimes \Bar{V}$.\\~\\
     
     The problems:
     \begin{enumerate}
         \item $\nu_{ij}$ never becomes exactly zero with shrinkage only $\rightarrow$ Parameter uncertainty adds up in large models.
-        \item Macroeconomic datasets usually have many correlated variables which inflates the variance estimates $S_1$.
+        \item Macroeconomic datasets usually have many correlated variables which inflates the error variance estimates $S_1$.
     \end{enumerate}
 \end{frame}
 %---------------------------------------------------------
