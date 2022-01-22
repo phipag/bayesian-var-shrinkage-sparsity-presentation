@@ -140,7 +140,7 @@
         Var(y_{T + 1}|Y,X) = \frac{1}{s_1 - 2} \underbrace{\left(1 + \sum_{i = 1}^{n} \sum_{j = 1}^{n} (x_{iT+1} x_{jT+1} \nu_{ij}) \right)}_{\text{Parameter uncertainty}} S_1
     \end{align}
     
-    where $s_1$ and $S_1$ are the mean and variance estimates of the Gaussian shocks $\epsilon_{T + 1}$ and $\nu_{ij}$ the $(i,j)$th element in $\Bar{V} = (\Bar{X}'\Bar{X})^{-1}$. Note that the posterior variance for $\alpha$ depends on $\Bar{V}$ and is given by $Var(\alpha | \Sigma,Y,X) = \Sigma \bigotimes \Bar{V}$.\\~\\
+    where $s_1$ and $S_1$ are the mean and variance estimates of the Gaussian shocks $\epsilon_{T + 1}$ and $\nu_{ij}$ the $(i,j)$th element in $V = (X' X)^{-1}$. Note that the posterior variance for $\alpha$ depends on $V$ and is given by $Var(\alpha | \Sigma,Y,X) = \Sigma \bigotimes V$.\\~\\
     
     The problems:
     \begin{enumerate}
@@ -163,7 +163,7 @@
         \item Repeat (1) – (3) $rep$ times
     \end{enumerate}
     ~\\
-    The result can be interpreted as an approximation to drawing from the sparsified joint posterior $p(\hat{\alpha}^* , \hat{\Omega}^* | Y,X)$. This is a major advantage in comparison to other literature\footcite{hahn_decoupling_2015} because the approximation of a sparsified posterior distribution allows statements about parameter uncertainty of the sparsified parameters.
+    The result can be interpreted as an approximation to drawing from the sparsified joint posterior $p(\hat{\alpha}^* , \hat{\Omega}^* | Y,X)$. This is a major advantage in comparison to other literature because the approximation of a sparsified posterior distribution allows statements about parameter uncertainty of the sparsified parameters.\footcite{hahn_decoupling_2015}
 \end{frame}
 
 \begin{frame}{Sparsity as a possible solution for predictive uncertainty II}
